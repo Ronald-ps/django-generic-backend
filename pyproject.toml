@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Modelo genérico de backend com django, para criar aplicações desacopladas, envolvendo tecnologias que gosto de usar"
 authors = ["Ronald Seabra <git.ronaldseabra@gmail.com>"]
 readme = "README.md"
-packages = [{include = "django_generic_backend"}]
+
 
 [tool.poetry.dependencies]
 python = "^3.11"
