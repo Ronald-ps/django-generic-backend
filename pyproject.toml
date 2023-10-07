@@ -19,6 +19,7 @@ psycopg2 = "^2.9.9"
 [tool.poetry.group.dev.dependencies]
 black = "^23.9.1"
 ruff = "^0.0.292"
+pytest-django = "^4.5.2"
 
 [build-system]
 requires = ["poetry-core"]
@@ -40,3 +41,9 @@ force-double-quote = true
 [tool.ruff]
 line-length = 110
 extend-exclude = ["migrations"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "project.settings"
+
+[tool.pytest.plugins]
+django_find_project = true
