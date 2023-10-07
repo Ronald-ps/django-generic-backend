@@ -16,6 +16,27 @@ python-decouple = "^3.8"
 psycopg2 = "^2.9.9"
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+ruff = "^0.0.292"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length=110
+target-version = ['py38', 'py39']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''
+force-double-quote = true
+
+
+[tool.ruff]
+line-length = 110
+extend-exclude = ["migrations"]

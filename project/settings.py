@@ -27,7 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 if DEBUG:
     ALLOWED_HOSTS += ["localhost", "127.0.0.1", "0.0.0.0"]
 
@@ -139,45 +139,45 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # CORS AND CSRF
-CORS_ALLOWED_ORIGINS = config('ALLOWED_ORIGINS', cast=Csv())
+CORS_ALLOWED_ORIGINS = config("ALLOWED_ORIGINS", cast=Csv())
 if DEBUG:
     CORS_ALLOWED_ORIGINS += [
-    "http://localhost:8080",
-    "http://localhost:5173",
-    "http://localhost:3000",
-    "http://localhost:80",
-]
+        "http://localhost:8080",
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "http://localhost:80",
+    ]
 
 CORS_ALLOW_CREDENTIALS = True
 
-CSRF_TRUSTED_ORIGINS = config('ALLOWED_ORIGINS', cast=Csv())
+CSRF_TRUSTED_ORIGINS = config("ALLOWED_ORIGINS", cast=Csv())
 
 
 # Logging
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '\n\n\n %(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "\n\n\n %(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"
         },
     },
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
         },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': 'error.log',
-            'formatter': 'verbose',
+        "file": {
+            "class": "logging.FileHandler",
+            "filename": "error.log",
+            "formatter": "verbose",
         },
     },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'ERROR',
-            'propagate': True,
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": "ERROR",
+            "propagate": True,
         },
     },
 }
