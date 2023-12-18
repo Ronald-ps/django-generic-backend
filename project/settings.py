@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # ----------
     "rest_framework",
+    "rest_framework_simplejwt.token_blacklist",  # jwt
     "corsheaders",
     "core",
 ]
@@ -151,6 +152,12 @@ if DEBUG:
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = config("ALLOWED_ORIGINS", cast=Csv())
+
+
+# django rest
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": ("rest_framework_simplejwt.authentication.JWTAuthentication",)
+}
 
 
 # Logging
